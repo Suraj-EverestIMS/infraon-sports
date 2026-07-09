@@ -42,9 +42,7 @@ function App() {
   ).sort((a, b) => a.date.localeCompare(b.date));
 
   const previousMatches = data.matches.filter(
-    (match) =>
-      match.stage === 'group' &&
-      match.status === 'completed'
+    match => match.status === "completed"
   ).sort((a, b) => b.date.localeCompare(a.date));
 
   return (

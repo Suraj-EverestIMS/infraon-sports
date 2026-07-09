@@ -6,13 +6,56 @@ interface PreviousMatchesProps {
 }
 
 const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
-  const [filter, setFilter] = useState<string | null>(null);
+  const [filter, setFilter] = useState<string>("all");
   
-  const filteredMatches = filter 
-    ? matches.filter(match => match.groupId === filter)
-    : matches;
+  const filteredMatches = matches.filter(match => {
+    if (filter === "all") return true;
+
+    if (filter.startsWith("group:")) {
+      return match.groupId === filter.replace("group:", "");
+    }
+
+    if (filter.startsWith("round:")) {
+      return match.round === filter.replace("round:", "");
+    }
+
+    return true;
+  });
     
-  const groups = Array.from(new Set(matches.map(match => match.groupId).filter(Boolean))) as string[];
+  const groups = [
+    ...new Set(
+      matches
+        .filter(m => m.stage === "group" && m.groupId)
+        .map(m => m.groupId!)
+    ),
+  ];
+
+  const roundOrder = [
+    "quarterfinal",
+    "semifinal",
+    "final",
+    "third_place",
+  ];
+
+  const rounds = [
+    ...new Set(
+      matches
+        .filter(m => m.stage === "knockout" && m.round)
+        .map(m => m.round!)
+    ),
+  ].sort(
+    (a, b) => roundOrder.indexOf(a) - roundOrder.indexOf(b)
+  );
+
+  console.log("Groups:", groups);
+console.log("Rounds:", rounds);
+
+  const roundLabels: Record<string, string> = {
+    quarterfinal: "Quarter Finals",
+    semifinal: "Semi Finals",
+    final: "Grand Final",
+    third_place: "3rd Place Match",
+  };
 
   return (
     <section className="py-16 px-4 bg-gray-50" id='matchResults'>
@@ -22,11 +65,11 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           <button
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              filter === null 
+              filter === "all" 
                 ? 'bg-blue-600 text-white' 
                 : 'bg-white text-gray-700 hover:bg-gray-100'
             }`}
-            onClick={() => setFilter(null)}
+            onClick={() => setFilter("all")}
           >
             All
           </button>
@@ -35,13 +78,27 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
             <button
               key={group.replace('group-', 'Group ').replace(/\b\w/g, c => c.toUpperCase())}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                filter === group 
+                filter === `group:${group}`
+                  ? "bg-blue-600 text-white"
+                  : "bg-white text-gray-700 hover:bg-gray-100"
+              }`}
+              onClick={() => setFilter(`group:${group}`)}
+            >
+              {group.replace('group-', 'Group ').replace(/\b\w/g, c => c.toUpperCase())}
+            </button>
+          ))}
+          
+          {rounds.map(round => (
+            <button
+              key={round}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                filter === `round:${round}`
                   ? 'bg-blue-600 text-white' 
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
-              onClick={() => setFilter(group)}
+              onClick={() => setFilter(`round:${round}`)}
             >
-              {group.replace('group-', 'Group ').replace(/\b\w/g, c => c.toUpperCase())}
+              {roundLabels[round] ?? round}
             </button>
           ))}
         </div>
@@ -61,11 +118,11 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
               <div key={match.id} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-lg">
                 <div className="bg-gray-100 p-3 text-sm text-gray-600 flex justify-between items-center">
                   <span>
-                    {match.groupId
+                    {match.stage === "group"
                       ? match.groupId
-                          .replace('group-', 'Group ')
+                          ?.replace("group-", "Group ")
                           .replace(/\b\w/g, c => c.toUpperCase())
-                      : 'Unknown Group'}
+                      : roundLabels[match.round ?? ""] ?? "Knockout"}
                   </span>
                   <span>{new Date(match.date).toLocaleDateString('en-US', { 
                     month: 'short', 

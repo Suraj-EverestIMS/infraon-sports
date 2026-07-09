@@ -234,6 +234,7 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
           backgroundPosition: "center",
           opacity: 1,
           backgroundAttachment: "fixed",
+          filter: "brightness(0.5)"
         }}
       />
 
@@ -243,31 +244,24 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
         </h2>
 
         <div className="grid grid-cols-5 gap-8 items-center">
-          {/* Left Quarter Finals */}
           <div className="flex flex-col justify-center h-full">
-            {/* <h3 className="text-center mb-6">Quarter Finals</h3> */}
-
+            
             <div>{renderMatch(leftQuarters[0])}</div>
 
             <div className="mt-24">{renderMatch(leftQuarters[1])}</div>
           </div>
 
-          {/* Left Semi Final */}
           <div className="flex flex-col justify-center h-full">
-            {/* <h3 className="text-center mb-6">Semi Finals</h3> */}
-
+            
             {leftSemi && renderMatch(leftSemi)}
           </div>
 
-          {/* Finals */}
           <div className="flex flex-col justify-center gap-8">
-            {/* <WinnerCard /> */}
-
+            
             {winner ? (
               <div className="bg-white rounded-xl shadow-xl p-6 border-2 border-yellow-400">
                 <div className="text-center">
-                  {/* <div className="text-yellow-500 text-4xl"></div> */}
-
+                  
                   <img
                     src={winner.avatar}
                     className="w-[4rem] h-[4rem] rounded-full mx-auto mt-0 border-4 border-yellow-400"
@@ -298,17 +292,13 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
             {thirdPlaceMatch && renderMatch(thirdPlaceMatch)}
           </div>
 
-          {/* Right Semi Final */}
           <div className="flex flex-col justify-center h-full">
-            {/* <h3 className="text-center mb-6">Semi Finals</h3> */}
-
+            
             {rightSemi && renderMatch(rightSemi)}
           </div>
 
-          {/* Right Quarter Finals */}
           <div className="flex flex-col justify-center h-full">
-            {/* <h3 className="text-center mb-6">Quarter Finals</h3> */}
-
+            
             <div>{renderMatch(rightQuarters[0])}</div>
 
             <div className="mt-24">{renderMatch(rightQuarters[1])}</div>
