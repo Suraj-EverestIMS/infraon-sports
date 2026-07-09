@@ -7,10 +7,6 @@ interface UpcomingMatchesProps {
 }
 
 const UpcomingMatches: React.FC<UpcomingMatchesProps> = ({ matches }) => {
-  // Defensive filter: even if a match record is left in this list after it's
-  // been played (isCompleted not updated in time), don't show it here.
-  // const pendingMatches = matches;
-
   const groupedMatches = matches.reduce<Record<string, Match[]>>((acc, match) => {
     if (!acc[match.date]) {
       acc[match.date] = [];
@@ -119,12 +115,6 @@ const UpcomingMatches: React.FC<UpcomingMatchesProps> = ({ matches }) => {
             </div>
           </div>
         ))}
-
-        {/* <div className="mt-8 text-center">
-          <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-            View All Matches
-          </button>
-        </div> */}
       </div>
     </section>
   );

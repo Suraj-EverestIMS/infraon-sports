@@ -18,7 +18,6 @@ export function useSeasonData(): UseSeasonDataResult {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Load the season list once, default to the latest (highest `order`).
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -40,7 +39,6 @@ export function useSeasonData(): UseSeasonDataResult {
     };
   }, []);
 
-  // Whenever the active season changes, fetch its data.
   useEffect(() => {
     if (!activeSeasonId) return;
     let cancelled = false;

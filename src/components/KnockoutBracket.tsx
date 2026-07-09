@@ -59,7 +59,7 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
       <div className="match-card bg-white rounded-lg shadow-md p-4 mb-8 w-full transform transition-transform hover:scale-[1.02]">
         <div className="text-xs text-gray-500 mb-2">
           {match.date && new Date(match.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-          {/* {match.time && ` • ${match.time}`} */}
+          
         </div>
         
         <div className={`player-row p-2 mb-1 rounded ${!match.player1 ? 'bg-gray-100' : 'bg-white border'} ${match.player1 && match.winner === match.player1.id ? 'bg-lime-200' : ''}`}>

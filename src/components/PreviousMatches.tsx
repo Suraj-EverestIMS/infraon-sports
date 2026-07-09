@@ -12,15 +12,13 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
     ? matches.filter(match => match.groupId === filter)
     : matches;
     
-  // Get unique groups
   const groups = Array.from(new Set(matches.map(match => match.groupId).filter(Boolean))) as string[];
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-gray-50" id='matchResults'>
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Previous Match Results</h2>
         
-        {/* Filter buttons */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           <button
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${
@@ -43,12 +41,11 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
               }`}
               onClick={() => setFilter(group)}
             >
-              {group}
+              {group.replace('group-', 'Group ').replace(/\b\w/g, c => c.toUpperCase())}
             </button>
           ))}
         </div>
         
-        {/* Match results */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredMatches.map(match => {
             const player1Sets = match.player1.score.reduce(

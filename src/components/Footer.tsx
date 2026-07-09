@@ -50,9 +50,6 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
               <li><a href="https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/TT+Rules.pdf" className="text-gray-400 hover:text-white transition-colors">Tournament Rules</a></li>
-              {/* <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Player Profiles</a></li> */}
-              {/* <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sponsors</a></li> */}
-              {/* <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Media</a></li> */}
             </ul>
           </div>
           
@@ -67,21 +64,12 @@ const Footer: React.FC = () => {
                 <Phone size={18} className="text-gray-400 flex-shrink-0" />
                 <a href="tel:+12345678900" className="text-gray-400 hover:text-white transition-colors">+1 (415) 322-2237</a>
               </div>
-              {/* <div className="flex items-center gap-3">
-                <Mail size={18} className="text-gray-400 flex-shrink-0" />
-                <a href="mailto:info@pingpongmasters.com" className="text-gray-400 hover:text-white transition-colors">info@pingpongmasters.com</a>
-              </div> */}
             </div>
           </div>
         </div>
         
         <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
           <p>&copy; {currentYear} Infraon Sports. All rights reserved.</p>
-          {/* <div className="mt-2 space-x-4">
-            <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-gray-300 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-gray-300 transition-colors">Cookie Policy</a>
-          </div> */}
         </div>
       </div>
     </footer>

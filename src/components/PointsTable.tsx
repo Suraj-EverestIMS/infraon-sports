@@ -13,7 +13,6 @@ function hasQualified(playerId: string, group: Group): boolean {
   const current = players.find(p => p.id === playerId);
   if (!current) return false;
 
-  // Maximum points each player can still reach
   const maxPoints = players.map(player => ({
     id: player.id,
     maxPoints: player.points + ((players.length - 1 - player.matches) * 2),
@@ -22,7 +21,6 @@ function hasQualified(playerId: string, group: Group): boolean {
 
   const me = maxPoints.find(p => p.id === playerId)!;
 
-  // Count players who can still finish above or equal to me
   const challengers = maxPoints.filter(
     p => p.id !== playerId && p.maxPoints >= me.currentPoints
   );
@@ -59,7 +57,6 @@ const PointsTable: React.FC<PointsTableProps> = ({ groups, previousMatches }) =>
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Points Table</h2>
         
-        {/* Group tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {groups.map(group => (
             <button
@@ -76,7 +73,6 @@ const PointsTable: React.FC<PointsTableProps> = ({ groups, previousMatches }) =>
           ))}
         </div>
         
-        {/* Points table */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -147,7 +143,6 @@ const PointsTable: React.FC<PointsTableProps> = ({ groups, previousMatches }) =>
                           <td className="px-4 py-3 text-center font-bold">{player.points}</td>
                         </tr>
                         
-                        {/* Expandable match history */}
                         {expandedPlayerId === player.id && (
                           <tr>
                             <td colSpan={7} className="bg-gray-50 px-4 py-4">

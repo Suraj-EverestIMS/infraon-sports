@@ -69,35 +69,6 @@ export interface Highlight {
   url: string;
 }
 
-// export interface KnockoutMatch {
-//   id: string;
-//   round: 'quarterfinal' | 'semifinal' | 'final' | 'third_place';
-//   position: number;
-//   player1: {
-//     id: string;
-//     name: string;
-//     score: number[],
-//     avatar?: string;
-//   } | null;
-//   player2: {
-//     id: string;
-//     name: string;
-//     score: number[],
-//     avatar?: string;
-//   } | null;
-//   winner?: string;
-//   date?: string;
-//   time?: string;
-// }
-
-// export interface KnockoutRound {
-//   name: string;
-//   matches: KnockoutMatch[];
-// }
-
-// --- Multi-season support ---
-
-// Master roster entry: canonical identity for a player, reused across seasons.
 export interface PlayerProfile {
   id: string;
   name: string;
@@ -116,7 +87,6 @@ export interface SeasonMeta {
   qualifiersPerGroup: number;
 }
 
-// Everything a season's pages need, fetched as one document.
 export interface SeasonData {
   meta: SeasonMeta;
   groups: Group[];

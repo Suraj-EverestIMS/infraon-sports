@@ -16,7 +16,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
   return (
     <section id="home" className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Background image */}
       <div 
         className="absolute inset-0 z-0" 
         style={{
@@ -28,7 +27,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
         }}
       />
 
-      {/* Content container */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
           <span className="block">Table Tennis</span>
@@ -80,7 +78,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
         </div>
       </div>
       
-      {/* Decorative elements */}
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
     </section>
   );
