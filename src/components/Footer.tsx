@@ -10,8 +10,8 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
             <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 flex items-center justify-center">
-                <img src="https://infraon.io/assets/img/favicon.svg" alt="Logo" width={'150'} className="w-full h-full object-contain" />
+              <div className="w-[180px] flex items-center justify-center">
+                <img src="https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/logo.png" alt="Logo" className="w-full h-full object-contain" />
               </div>
             </a>
             <span className="text-xl font-bold text-white">Infraon Sports Tournament 2025</span>
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Info</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Tournament Rules</a></li>
+              <li><a href="https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/TT+Rules.pdf" className="text-gray-400 hover:text-white transition-colors">Tournament Rules</a></li>
               {/* <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Player Profiles</a></li> */}
               {/* <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sponsors</a></li> */}
               {/* <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Media</a></li> */}
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {currentYear} PingPong Masters. All rights reserved.</p>
+          <p>&copy; {currentYear} Infraon Sports. All rights reserved.</p>
           {/* <div className="mt-2 space-x-4">
             <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-gray-300 transition-colors">Terms of Service</a>

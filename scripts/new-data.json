@@ -1,0 +1,632 @@
+{
+  "meta": {
+    "id": "season-2",
+    "name": "Season 2 (2026)",
+    "year": 2026,
+    "order": 2,
+    "playersPerGroup": 4,
+    "qualifiersPerGroup": 2,
+    "groupStageSets": 5,
+    "knockoutStageSets": 7,
+    "finalsSets": 7
+  },
+
+  "groups": [
+    {
+      "id": "group-a",
+      "name": "Group A",
+      "players": [
+        {
+          "id": "p1",
+          "name": "Abhirup",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png",
+          "matches": 0,
+          "wins": 0,
+          "losses": 0,
+          "points": 0,
+          "noResults": 0
+        },
+        {
+          "id": "p11",
+          "name": "Ranjith Kumar",
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "matches": 1,
+          "wins": 1,
+          "losses": 0,
+          "points": 2,
+          "noResults": 0
+        },
+        {
+          "id": "p17",
+          "name": "Guhan",
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "matches": 1,
+          "wins": 0,
+          "losses": 1,
+          "points": 0,
+          "noResults": 0
+        }
+      ]
+    },
+    {
+      "id": "group-b",
+      "name": "Group B",
+      "players": [
+        {
+          "id": "p6",
+          "name": "Prajwal K S",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png",
+          "matches": 2,
+          "wins": 1,
+          "losses": 1,
+          "points": 2,
+          "noResults": 0
+        },
+        {
+          "id": "p18",
+          "name": "Sanjeev",
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "matches": 1,
+          "wins": 1,
+          "losses": 0,
+          "points": 2,
+          "noResults": 0
+        },
+        {
+          "id": "p19",
+          "name": "Siddharth",
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "matches": 1,
+          "wins": 0,
+          "losses": 1,
+          "points": 0,
+          "noResults": 0
+        }
+      ]
+    },
+    {
+      "id": "group-c",
+      "name": "Group C",
+      "players": [
+          {
+            "id": "p10",
+            "name": "Murugan",
+            "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png",
+            "matches": 1,
+            "wins": 1,
+            "losses": 0,
+            "points": 2,
+            "noResults": 0
+          },
+          {
+            "id": "p15",
+            "name": "Iranna",
+            "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/iranna.png",
+            "matches": 1,
+            "wins": 0,
+            "losses": 1,
+            "points": 0,
+            "noResults": 0
+          },
+          {
+            "id": "p16",
+            "name": "Nagaraju",
+            "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/nagaraju.png",
+            "noResults": 0,
+            "wins": 0,
+            "losses": 0,
+            "matches": 0,
+            "points": 0
+          }
+      ]
+    },
+    {
+      "id": "group-d",
+      "name": "Group D",
+      "players": [
+        {
+          "id": "p2",
+          "name": "Shikar S",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png",
+          "matches": 0,
+          "wins": 0,
+          "losses": 0,
+          "points": 0,
+          "noResults": 0
+        },
+        {
+          "id": "p9",
+          "name": "Pavan C",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/pavan.png",
+          "matches": 0,
+          "wins": 0,
+          "losses": 0,
+          "points": 0,
+          "noResults": 0
+        },
+        {
+          "id": "p20",
+          "name": "Shweta Shree",
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "matches": 0,
+          "wins": 0,
+          "losses": 0,
+          "points": 0,
+          "noResults": 0
+        }
+      ]
+    }
+  ],
+
+  "matches": [
+    {
+      "id": "pm1",
+      "date": "2026-07-08",
+      
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-a",
+
+      "player1": {
+        "id": "p11",
+        "name": "Ranjith Kumar",
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "score": [14, 8, 13]
+      },
+      "player2": {
+        "id": "p17",
+        "name": "Guhan",
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "score": [12, 11, 11]
+      },
+      "winner": "p11",
+      "isWalkover": false
+    },
+    {
+      "id": "pm2",
+      "date": "2026-07-08",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-b",
+      
+      "player1": {
+        "name": "Prajwal K S",
+        "id": "p6",
+        "score": [12, 10, 9],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png"
+      },
+      "player2": {
+        "id": "p18",
+        "name": "Sanjeev",
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "score": [10, 12, 11]
+      },
+      "winner": "p18",
+      "isWalkover": false
+    },
+    {
+      "id": "pm3",
+      "date": "2026-07-08",
+      
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-c",
+      
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png",
+        "id": "p10",
+        "score": [11, 11],
+        "name": "Murugan"
+      },
+      "player2": {
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/iranna.png",
+          "name": "Iranna",
+          "id": "p15",
+          "score": [5, 8]
+      },
+      "winner": "p10",
+      "isWalkover": false
+    },
+    {
+      "id": "pm4",
+      "date": "2026-07-08",
+      
+      "stage": "group",
+      "status": "scheduled",
+      "groupId": "group-d",
+      
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png",
+        "name": "Shikar S",
+        "score": [],
+        "id": "p2"
+      },
+      "player2": {
+        "name": "Pavan C",
+        "id": "p9",
+        "score": [],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/pavan.png"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "pm5",
+      "date": "2026-07-09",
+      
+      "stage": "group",
+      "status": "scheduled",
+      "groupId": "group-a",
+
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "id": "p17",
+        "score": [],
+        "name": "Guhan"
+      },
+      "player1": {
+        "name": "Abhirup",
+        "score": [],
+        "id": "p1",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "pm6",
+      "date": "2026-07-09",
+      
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-b",
+
+      "player2": {
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "id": "p19",
+          "score": [3, 2],
+          "name": "Siddharth"
+      },
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png",
+        "score": [11, 11],
+        "id": "p6",
+        "name": "Prajwal K S"
+      },
+      "winner": "p6",
+      "isWalkover": false
+    },
+    {
+      "id": "pm7",
+      "date": "2026-07-09",
+      
+      "stage": "group",
+      "status": "scheduled",
+      "groupId": "group-c",
+      
+      "player2": {
+        "score": [],
+        "id": "p16",
+        "name": "Nagaraju",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/nagaraju.png"
+      },
+      "player1": {
+        "name": "Murugan",
+        "score": [],
+        "id": "p10",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "pm8",
+      "date": "2026-07-09",
+
+      "stage": "group",
+      "status": "scheduled",
+      "groupId": "group-d",
+
+      "player2": {
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "name": "Shweta Shree",
+          "id": "p20",
+          "score": []
+      },
+      "player1": {
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png",
+          "name": "Shikar S",
+          "id": "p2",
+          "score": []
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "pm9",
+      "stage": "group",
+      "status": "scheduled",
+      "groupId": "group-a",
+      "date": "2026-07-10",
+
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "id": "p11",
+        "score": [],
+        "name": "Ranjith Kumar"
+      },
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png",
+        "name": "Abhirup",
+        "id": "p1",
+        "score": []
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "pm10",
+      "date": "2026-07-10",
+      
+      "stage": "group",
+      "status": "scheduled",
+      "groupId": "group-b",
+
+      "player1": {
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "name": "Sanjeev",
+          "id": "p18",
+          "score": []
+      },
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Siddharth",
+        "id": "p19",
+          "score": []
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "pm11",
+      "date": "2026-07-10",
+      
+      "stage": "group",
+      "status": "scheduled",
+      "groupId": "group-c",
+
+      "player2": {
+        "id": "p16",
+        "score": [],
+        "name": "Nagaraju",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/nagaraju.png"
+      },
+      "player1": {
+        "name": "Iranna",
+        "score": [],
+        "id": "p15",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/iranna.png"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "pm12",
+      "date": "2026-07-10",
+      
+      "stage": "group",
+      "status": "scheduled",
+      "groupId": "group-d",
+
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/pavan.png",
+        "id": "p9",
+        "score": [],
+        "name": "Pavan C"
+      },
+      "player2": {
+        "name": "Shweta Shree",
+        "score": [],
+        "id": "p20",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "qf1",
+      "date": "2026-07-13",
+      "round": "quarterfinal",
+      
+      "stage": "knockout",
+      "status": "scheduled",
+      "bracketId": "qf1",
+      
+      "player1": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Winner Group A",
+        "id": "",
+        "score": []
+      },
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "id": "",
+        "score": [],
+        "name": "Runner-up Group D"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "qf2",
+      "date": "2026-07-13",
+      "round": "quarterfinal",
+
+      "stage": "knockout",
+      "status": "scheduled",
+      "bracketId": "qf2",
+      
+      "player1": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Winner Group B",
+        "id": "",
+        "score": []
+      },
+      "player2": {
+        "score": [],
+        "id": "",
+        "name": "Runner-up Group C",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "qf3",
+      "round": "quarterfinal",
+      "date": "2026-07-13",
+
+      "stage": "knockout",
+      "status": "scheduled",
+      "bracketId": "qf3",
+      
+      "player1": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Winner Group C",
+        "score": [],
+        "id": ""
+      },
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "score": [],
+        "id": "",
+        "name": "Runner-up Group D"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "qf4",
+      "round": "quarterfinal",
+      "date": "2026-07-13",
+      
+      "stage": "knockout",
+      "status": "scheduled",
+      "bracketId": "qf4",
+      
+      "player1": {
+        "score": [],
+        "id": "",
+        "name": "Winner Group D",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "player2": {
+        "name": "Runner-up Group A",
+        "id": "",
+        "score": [],
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "sf1",
+      "date": "2026-07-14",
+      "round": "semifinal",
+      
+      "stage": "knockout",
+      "status": "scheduled",
+      "bracketId": "sf1",
+
+      "player1": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Winner QF1",
+        "score": [],
+        "id": ""
+      },
+      "player2": {
+        "name": "Winner QF2",
+        "score": [],
+        "id": "",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "sf2",
+      "date": "2026-07-14",
+      "round": "semifinal",
+
+      "stage": "knockout",
+      "status": "scheduled",
+      "bracketId": "sf2",
+
+      "player1": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "score": [],
+        "id": "",
+        "name": "Winner QF3"
+      },
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Winner QF4",
+        "score": [],
+        "id": ""
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "f1",
+      "date": "2026-07-14",
+      "round": "final",
+
+      "stage": "knockout",
+      "status": "scheduled",
+      "bracketId": "final",
+
+      "player1": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "score": [],
+        "id": "",
+        "name": "Winner SF1"
+      },
+      "player2": {
+        "name": "Winner SF2",
+        "score": [],
+        "id": "",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "winner": "",
+      "isWalkover": false
+    },
+    {
+      "id": "tp",
+      "date": "2026-07-14",
+      "round": "third_place",
+
+      "stage": "knockout",
+      "status": "scheduled",
+      "bracketId": "tp",
+
+      "player1": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "score": [],
+        "id": "",
+        "name": "Runner-up SF1"
+      },
+      "player2": {
+        "name": "Runner-up SF2",
+        "score": [],
+        "id": "",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "winner": "",
+      "isWalkover": false
+    }
+  ],
+
+  "highlights": []
+}

@@ -1,16 +1,22 @@
 import React from 'react';
-// import { CookingPot as PingPong } from 'lucide-react';
+import type { SeasonMeta } from '../types';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  seasons: SeasonMeta[];
+  activeSeasonId: string;
+  onSeasonChange: (id: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ seasons, activeSeasonId, onSeasonChange }) => {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm">
       <nav className="container mx-auto flex items-center justify-between px-4 py-4 md:px-6">
         <a href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 flex items-center justify-center text-white rounded-full">
+          <div className="w-[180px] flex items-center justify-center text-white rounded-full">
             {/* <PingPong size={24} /> */}
-            <img src="https://infraon.io/assets/img/favicon.svg" alt="Logo" className="w-full h-full object-contain" />
+            {/* <img src="https://infraon.io/assets/img/favicon.svg" alt="Logo" className="w-full h-full object-contain" /> */}
+            <img src="https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/logo.png" alt="" />
           </div>
-          <span className="text-xl font-bold text-blue-600">Infraon Sports Tournament 2025</span>
         </a>
         
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -19,6 +25,26 @@ const Header: React.FC = () => {
           <a href="#points" className="text-gray-700 hover:text-blue-600 transition-colors">Points Table</a>
           <a href="#brackets" className="text-gray-700 hover:text-blue-600 transition-colors">Brackets</a>
           <a href="#highlights" className="text-gray-700 hover:text-blue-600 transition-colors">Highlights</a>
+          
+
+          <select
+            value={activeSeasonId}
+            onChange={(e) => onSeasonChange(e.target.value)}
+            className='text-gray-700 hover:text-blue-600 transition-colors outline-0 cursor-pointer bg-transparent'
+          >
+            {seasons.map((season) => (
+              <option key={season.id} className='text-gray-700 hover:text-blue-600 transition-colors' value={season.id}>
+                {season.name}
+              </option>
+            ))}
+          </select>
+
+          {/* <select name="" id="" className='text-gray-700 hover:text-blue-600 transition-colors outline-0 cursor-pointer bg-transparent'>
+            <option className='text-gray-700 hover:text-blue-600 transition-colors' value="tt">Table Tennis</option>
+            <option className='text-gray-700 hover:text-blue-600 transition-colors' value="bd">Badminton</option>
+            <option className='text-gray-700 hover:text-blue-600 transition-colors' value="ch">Chess</option>
+            <option className='text-gray-700 hover:text-blue-600 transition-colors' value="ca">Carom</option>
+          </select> */}
         </div>
         
         <button className="block md:hidden">

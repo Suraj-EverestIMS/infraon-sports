@@ -1,0 +1,997 @@
+{
+  "meta": {
+    "id": "season-1",
+    "name": "Season 1 (2025)",
+    "year": 2025,
+    "order": 1,
+    "playersPerGroup": 4,
+    "qualifiersPerGroup": 2,
+    "groupStageSets": 5,
+    "knockoutStageSets": 7,
+    "finalsSets": 7
+  },
+
+  "groups": [
+    {
+      "id": "group-a",
+      "name": "Group A",
+      "players": [
+        {
+          "id": "p1",
+          "name": "Abhirup",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png",
+          "matches": 2,
+          "wins": 2,
+          "points": 4,
+          "losses": 0,
+          "noResults": 1
+        },
+        {
+          "id": "p2",
+          "name": "Shikar S",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png",
+          "noResults": 0,
+          "wins": 2,
+          "matches": 3,
+          "points": 4,
+          "losses": 1
+        },
+        {
+          "matches": 1,
+          "points": 0,
+          "noResults": 2,
+          "wins": 0,
+          "losses": 1,
+          "id": "p3",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/krishna.png",
+          "name": "Krishna"
+        },
+        {
+          "losses": 2,
+          "matches": 2,
+          "points": 0,
+          "wins": 0,
+          "noResults": 1,
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "name": "Bharath R",
+          "id": "p4"
+        }
+      ]
+    },
+    {
+      "id": "group-b",
+      "name": "Group B",
+      "players": [
+        {
+          "points": 6,
+          "matches": 3,
+          "noResults": 0,
+          "wins": 3,
+          "losses": 0,
+          "id": "p5",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/kishore.png",
+          "name": "Kishore A"
+        },
+        {
+          "losses": 1,
+          "noResults": 0,
+          "wins": 2,
+          "matches": 3,
+          "points": 4,
+          "name": "Prajwal K S",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png",
+          "id": "p6"
+        },
+        {
+          "name": "Vijaykumar S",
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "id": "p7",
+          "losses": 2,
+          "noResults": 0,
+          "wins": 1,
+          "points": 2,
+          "matches": 3
+        },
+        {
+          "wins": 0,
+          "noResults": 0,
+          "matches": 3,
+          "points": 0,
+          "losses": 3,
+          "id": "p8",
+          "name": "Hemanathan C",
+          "avatar": "https://placehold.net/avatar-5.svg"
+        }
+      ]
+    },
+    {
+      "id": "group-c",
+      "name": "Group C",
+      "players": [
+        {
+          "noResults": 0,
+          "wins": 3,
+          "matches": 3,
+          "points": 6,
+          "losses": 0,
+          "id": "p9",
+          "name": "Pavan C",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/pavan.png"
+        },
+        {
+          "points": 4,
+          "matches": 3,
+          "wins": 2,
+          "noResults": 0,
+          "losses": 1,
+          "id": "p10",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png",
+          "name": "Murugan"
+        },
+        {
+          "avatar": "https://placehold.net/avatar-5.svg",
+          "name": "Ranjith Kumar",
+          "id": "p11",
+          "losses": 2,
+          "points": 2,
+          "matches": 3,
+          "wins": 1,
+          "noResults": 0
+        },
+        {
+          "losses": 3,
+          "wins": 0,
+          "noResults": 0,
+          "points": 0,
+          "matches": 3,
+          "name": "Prashanth S",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prashant.png",
+          "id": "p12"
+        }
+      ]
+    },
+    {
+      "id": "group-d",
+      "name": "Group D",
+      "players": [
+        {
+          "losses": 0,
+          "wins": 3,
+          "noResults": 0,
+          "matches": 3,
+          "points": 6,
+          "name": "Simon",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/simon.png",
+          "id": "p13"
+        },
+        {
+          "losses": 1,
+          "points": 4,
+          "matches": 3,
+          "wins": 2,
+          "noResults": 0,
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/suraj.png",
+          "name": "Suraj Niyogi",
+          "id": "p14"
+        },
+        {
+          "id": "p15",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/iranna.png",
+          "name": "Iranna",
+          "points": 2,
+          "matches": 3,
+          "noResults": 0,
+          "wins": 1,
+          "losses": 2
+        },
+        {
+          "matches": 3,
+          "points": 0,
+          "wins": 0,
+          "noResults": 0,
+          "losses": 3,
+          "id": "p16",
+          "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/nagaraju.png",
+          "name": "Nagaraju"
+        }
+      ]
+    }
+  ],
+
+  "matches": [
+    {
+      "id": "pm1",
+      "date": "2025-06-01",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-a",
+      "isWalkover": false,
+
+      "player2": {
+        "name": "Shikar S",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png",
+        "score": [9, 7, 7],
+        "id": "p2"
+      },
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png",
+        "name": "Abhirup",
+        "id": "p1",
+        "score": [11, 11, 11]
+      },
+      "winner": "p1"
+    },
+    {
+      "date": "2025-06-01",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-a",
+      "isWalkover": true,
+
+      "winner": "",
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png",
+        "name": "Abhirup",
+        "id": "p1",
+        "score": []
+      },
+      "id": "pm2",
+      "player2": {
+        "score": [],
+        "id": "p3",
+        "name": "Krishna",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/krishna.png"
+      }
+    },
+    {
+      "date": "2025-06-01",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-a",
+      "isWalkover": false,
+
+      "winner": "p1",
+      "player2": {
+        "name": "Bharath R",
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "score": [1, 3, 5],
+        "id": "p4"
+      },
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png",
+        "name": "Abhirup",
+        "id": "p1",
+        "score": [11, 11, 11]
+      },
+      "id": "pm3"
+    },
+    {
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-a",
+      "isWalkover": false,
+
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png",
+        "name": "Shikar S",
+        "id": "p2",
+        "score": [11, 11, 11]
+      },
+      "id": "pm4",
+      "player2": {
+        "id": "p3",
+        "score": [5, 5, 4],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/krishna.png",
+        "name": "Krishna"
+      },
+      "winner": "p2",
+      "date": "2025-06-01"
+    },
+    {
+      "id": "pm5",
+      "player1": {
+        "score": [11, 11, 11],
+        "id": "p2",
+        "name": "Shikar S",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png"
+      },
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Bharath R",
+        "score": [5, 2, 7],
+        "id": "p4"
+      },
+      "winner": "p2",
+      "date": "2025-06-02",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-a",
+      "isWalkover": false
+    },
+    {
+      "date": "2025-06-02",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-a",
+      "isWalkover": true,
+
+      "winner": "",
+      "player2": {
+        "score": [],
+        "id": "p4",
+        "name": "Bharath R",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "player1": {
+        "id": "p3",
+        "score": [],
+        "name": "Krishna",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/krishna.png"
+      },
+      "id": "pm6"
+    },
+    {
+      "date": "2025-06-02",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-b",
+      "isWalkover": false,
+
+      "id": "pm7",
+      "player2": {
+        "id": "p6",
+        "score": [3, 4, 11, 8],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png",
+        "name": "Prajwal K S"
+      },
+      "player1": {
+        "id": "p5",
+        "score": [11, 11, 5, 11],
+        "name": "Kishore A",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/kishore.png"
+      },
+      "winner": "p5"
+    },
+    {
+      "date": "2025-06-02",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-b",
+      "isWalkover": false,
+
+      "id": "pm8",
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png",
+        "name": "Prajwal K S",
+        "id": "p6",
+        "score": [11, 11, 8, 11]
+      },
+      "player2": {
+        "score": [3, 3, 11, 1],
+        "id": "p8",
+        "name": "Hemanathan C",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "winner": "p6"
+    },
+    {
+      "winner": "p6",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-b",
+      "isWalkover": false,
+
+      "player1": {
+        "id": "p6",
+        "score": [11, 11, 8, 11],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png",
+        "name": "Prajwal K S"
+      },
+      "id": "pm9",
+      "player2": {
+        "id": "p7",
+        "score": [7, 9, 11, 2],
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Vijaykumar S"
+      },
+      "date": "2025-06-03"
+    },
+    {
+      "date": "2025-06-03",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-b",
+      "isWalkover": false,
+
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Hemanathan C",
+        "id": "p8",
+        "score": [5, 4, 3]
+      },
+      "player1": {
+        "id": "p5",
+        "score": [11, 11, 11],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/kishore.png",
+        "name": "Kishore A"
+      },
+      "id": "pm10",
+      "winner": "p5"
+    },
+    {
+      "date": "2025-06-03",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-b",
+      "isWalkover": false,
+
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Vijaykumar S",
+        "id": "p7",
+        "score": [11, 11, 11]
+      },
+      "player1": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Hemanathan C",
+        "score": [2, 4, 1],
+        "id": "p8"
+      },
+      "id": "pm11",
+      "winner": "p7"
+    },
+    {
+      "date": "2025-06-03",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-b",
+      "isWalkover": false,
+
+      "winner": "p5",
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/kishore.png",
+        "name": "Kishore A",
+        "id": "p5",
+        "score": [10, 11, 11, 11]
+      },
+      "player2": {
+        "id": "p7",
+        "score": [12, 8, 2, 7],
+        "name": "Vijaykumar S",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "id": "pm12"
+    },
+    {
+      "player2": {
+        "id": "p9",
+        "score": [11, 9, 10, 11, 11],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/pavan.png",
+        "name": "Pavan C"
+      },
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-c",
+      "isWalkover": false,
+
+      "id": "pm13",
+      "player1": {
+        "name": "Murugan",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png",
+        "score": [7, 11, 12, 6, 5],
+        "id": "p10"
+      },
+      "winner": "p9",
+      "date": "2025-06-04"
+    },
+    {
+      "date": "2025-06-04",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-c",
+      "isWalkover": false,
+
+      "id": "pm14",
+      "player2": {
+        "name": "Prashanth S",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prashant.png",
+        "id": "p12",
+        "score": [4, 7, 3]
+      },
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png",
+        "name": "Murugan",
+        "id": "p10",
+        "score": [11, 11, 11]
+      },
+      "winner": "p10"
+    },
+    {
+      "player2": {
+        "id": "p11",
+        "score": [4, 10, 5],
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Ranjith Kumar"
+      },
+      "id": "pm15",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-c",
+      "isWalkover": false,
+
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png",
+        "name": "Murugan",
+        "score": [11, 12, 11],
+        "id": "p10"
+      },
+      "winner": "p10",
+      "date": "2025-06-04"
+    },
+    {
+      "date": "2025-06-04",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-c",
+      "isWalkover": false,
+
+      "id": "pm16",
+      "player1": {
+        "id": "p9",
+        "score": [11, 14, 16],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/pavan.png",
+        "name": "Pavan C"
+      },
+      "player2": {
+        "name": "Prashanth S",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prashant.png",
+        "score": [8, 12, 14],
+        "id": "p12"
+      },
+      "winner": "p9"
+    },
+    {
+      "date": "2025-06-04",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-c",
+      "isWalkover": false,
+
+      "player2": {
+        "id": "p11",
+        "score": [2, 10, 11, 5],
+        "name": "Ranjith Kumar",
+        "avatar": "https://placehold.net/avatar-5.svg"
+      },
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/pavan.png",
+        "name": "Pavan C",
+        "id": "p9",
+        "score": [11, 12, 6, 11]
+      },
+      "id": "pm17",
+      "winner": "p9"
+    },
+    {
+      "date": "2025-06-04",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-c",
+      "isWalkover": false,
+
+      "id": "pm18",
+      "player2": {
+        "avatar": "https://placehold.net/avatar-5.svg",
+        "name": "Ranjith Kumar",
+        "id": "p11",
+        "score": [11, 6, 11, 11]
+      },
+      "player1": {
+        "score": [7, 11, 6, 1],
+        "id": "p12",
+        "name": "Prashanth S",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prashant.png"
+      },
+      "winner": "p11"
+    },
+    {
+      "date": "2025-06-04",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-d",
+      "isWalkover": false,
+
+      "winner": "p13",
+      "player2": {
+        "id": "p14",
+        "score": [9, 3, 9],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/suraj.png",
+        "name": "Suraj Niyogi"
+      },
+      "id": "pm19",
+      "player1": {
+        "score": [11, 11, 11],
+        "id": "p13",
+        "name": "Simon",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/simon.png"
+      }
+    },
+    {
+      "date": "2025-06-04",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-d",
+      "isWalkover": false,
+
+      "id": "pm20",
+      "player2": {
+        "score": [9, 6, 11, 5],
+        "id": "p16",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/nagaraju.png",
+        "name": "Nagaraju N"
+      },
+      "player1": {
+        "score": [11, 11, 8, 11],
+        "id": "p13",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/simon.png",
+        "name": "Simon"
+      },
+      "winner": "p13"
+    },
+    {
+      "player2": {
+        "name": "Iranna",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/iranna.png",
+        "id": "p15",
+        "score": [11, 7, 7, 8]
+      },
+      "id": "pm21",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-d",
+      "isWalkover": false,
+
+      "player1": {
+        "score": [9, 11, 11, 11],
+        "id": "p13",
+        "name": "Simon",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/simon.png"
+      },
+      "winner": "p13",
+      "date": "2025-06-04"
+    },
+    {
+      "date": "2025-06-04",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-d",
+      "isWalkover": false,
+
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/suraj.png",
+        "name": "Suraj Niyogi",
+        "id": "p14",
+        "score": [11, 11, 11]
+      },
+      "id": "pm22",
+      "player2": {
+        "score": [1, 6, 4],
+        "id": "p16",
+        "name": "Nagaraju N",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/nagaraju.png"
+      },
+      "winner": "p14"
+    },
+    {
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-d",
+      "isWalkover": false,
+
+      "date": "2025-06-04",
+      "winner": "p14",
+      "id": "pm23",
+      "player1": {
+        "name": "Suraj Niyogi",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/suraj.png",
+        "score": [11, 6, 11, 11],
+        "id": "p14"
+      },
+      "player2": {
+        "score": [6, 11, 8, 6],
+        "id": "p15",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/iranna.png",
+        "name": "Iranna"
+      }
+    },
+    {
+      "date": "2025-06-04",
+
+      "stage": "group",
+      "status": "completed",
+      "groupId": "group-d",
+      "isWalkover": false,
+
+      "player2": {
+        "id": "p15",
+        "score": [11, 11, 11],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/iranna.png",
+        "name": "Iranna"
+      },
+      "player1": {
+        "name": "Nagaraju N",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/nagaraju.png",
+        "score": [8, 2, 6],
+        "id": "p16"
+      },
+      "id": "pm24",
+      "winner": "p15"
+    },
+
+    {
+      "id": "qf1",
+      "date": "2025-06-12",
+      "round": "quarterfinal",
+
+      "stage": "knockout",
+      "status": "completed",
+      "bracketId": "qf1",
+      "isWalkover": false,
+
+      "player1": {
+        "name": "Abhirup",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png",
+        "id": "p1",
+        "score": [11, 11, 11, 11]
+      },
+      "player2": {
+        "score": [5, 8, 6, 5],
+        "id": "p14",
+        "name": "Suraj Niyogi",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/suraj.png"
+      },
+      "winner": "p1"
+    },
+    {
+      "id": "qf2",
+      "date": "2025-06-13",
+      "round": "quarterfinal",
+
+      "stage": "knockout",
+      "status": "completed",
+      "bracketId": "qf2",
+      "isWalkover": true,
+
+      "player1": {
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/kishore.png",
+        "name": "Kishore A (withdrawn)",
+        "id": "p5",
+        "score": []
+      },
+      "player2": {
+        "name": "Murugan",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png",
+        "score": [],
+        "id": "p10"
+      },
+      "winner": "p10"
+    },
+    {
+      "id": "qf3",
+      "date": "2025-06-12",
+      "round": "quarterfinal",
+
+      "stage": "knockout",
+      "status": "completed",
+      "bracketId": "qf3",
+      "isWalkover": false,
+
+      "player1": {
+        "name": "Shikar S",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png",
+        "id": "p2",
+        "score": [8, 11, 11, 14, 11]
+      },
+      "player2": {
+        "id": "p13",
+        "score": [8, 9, 12, 9, 8],
+        "name": "Simon",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/simon.png"
+      },
+      "winner": "p2"
+    },
+    {
+      "id": "qf4",
+      "date": "2025-06-13",
+      "round": "quarterfinal",
+
+      "stage": "knockout",
+      "status": "completed",
+      "bracketId": "qf4",
+      "isWalkover": false,
+
+      "player1": {
+        "id": "p6",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png",
+        "name": "Prajwal K S",
+        "score": [11, 10, 11, 11, 12, 11]
+      },
+      "player2": {
+        "name": "Pavan C",
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/pavan.png",
+        "id": "p9",
+        "score": [9, 12, 4, 5, 14, 8]
+      },
+      "winner": "p6"
+    },
+    {
+      "id": "sf1",
+      "date": "2025-06-15",
+      "round": "semifinal",
+
+      "stage": "knockout",
+      "status": "completed",
+      "bracketId": "sf1",
+      
+      "player1": { 
+        "id": "p1", 
+        "name": "Abhirup", 
+        "score": [11, 11, 11, 11], 
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png" 
+      },
+      "player2": { 
+        "id": "p10", 
+        "name": "Murugan", 
+        "score": [8, 9, 6, 7], 
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/murugan.png" 
+      },
+      "winner": "p1",
+      "isWalkover": false
+    },
+    {
+      "id": "sf2",
+      "date": "2025-06-15",
+      "round": "semifinal",
+      
+      "stage": "knockout",
+      "status": "completed",
+      "bracketId": "sf2",
+      
+      "player1": { 
+        "id": "p6",
+        "name": "Prajwal K S", 
+        "score": [7, 6, 6, 11, 11, 11, 11], 
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png" 
+      },
+      "player2": { 
+        "id": "p2",
+        "name": "Shikar S", 
+        "score": [11, 11, 11, 6, 8, 7, 7], 
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/shikar.png" 
+      },
+      "winner": "p6",
+      "isWalkover": false
+    },
+
+    {
+      "id": "f1",
+      "date": "2025-06-18",
+      "round": "final",
+
+      "stage": "knockout",
+      "status": "completed",
+      "bracketId": "final",
+
+      "player1": { 
+        "id": "p1", 
+        "name": 
+        "Abhirup",
+        "score": [11, 11, 7, 6, 6, 11, 11],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/abhirup.png"
+      },
+      "player2": { 
+        "id": "p6", 
+        "name": 
+        "Prajwal K S",
+        "score": [6, 8, 11, 11, 11, 7, 9],
+        "avatar": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/players/prajwal.png"
+      },
+      "winner": "p1",
+      "isWalkover": false
+    }
+  ],
+
+  "highlights": [
+    {
+      "id": "1",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Image+2025-04-22+at+19.25.16_2754f97e.jpg",
+      "type": "image"
+    },
+    {
+      "type": "image",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Image+2025-04-23+at+19.09.53_de743521.jpg",
+      "id": "2"
+    },
+    {
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Image+2025-04-23+at+19.09.54_be450e5d.jpg",
+      "id": "3",
+      "type": "image"
+    },
+    {
+      "type": "image",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Image+2025-04-23+at+19.09.54_f58abe2f.jpg",
+      "id": "4"
+    },
+    {
+      "type": "video",
+      "id": "5",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-21+at+19.00.53_94804307.mp4"
+    },
+    {
+      "id": "6",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-22+at+19.25.39_83bbee54.mp4",
+      "type": "video"
+    },
+    {
+      "type": "video",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-23+at+19.09.47_2178c805.mp4",
+      "id": "7"
+    },
+    {
+      "type": "video",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-23+at+19.09.50_0d6ed718.mp4",
+      "id": "8"
+    },
+    {
+      "type": "video",
+      "id": "9",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-25+at+17.31.33_82864d99.mp4"
+    },
+    {
+      "type": "video",
+      "id": "10",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-25+at+20.01.50_3c9bdc06.mp4"
+    },
+    {
+      "type": "video",
+      "id": "11",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-25+at+20.01.54_40c22ed3.mp4"
+    },
+    {
+      "type": "video",
+      "id": "12",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-25+at+20.01.59_332940e7.mp4"
+    },
+    {
+      "type": "video",
+      "id": "13",
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-25+at+20.02.03_7376a306.mp4"
+    },
+    {
+      "url": "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/2025/WhatsApp+Video+2025-04-28+at+20.37.05_199a0113.mp4",
+      "id": "14",
+      "type": "video"
+    }
+  ]
+}

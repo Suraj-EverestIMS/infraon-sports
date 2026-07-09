@@ -1,15 +1,38 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { Group, MatchResult } from '../types';
-import { previousMatches } from '../data/tournamentData';
+import { Group, Match } from '../types';
 
 interface PointsTableProps {
   groups: Group[];
+  previousMatches: Match[];
 }
 
-const PointsTable: React.FC<PointsTableProps> = ({ groups }) => {
+function hasQualified(playerId: string, group: Group): boolean {
+  const players = [...group.players];
+
+  const current = players.find(p => p.id === playerId);
+  if (!current) return false;
+
+  // Maximum points each player can still reach
+  const maxPoints = players.map(player => ({
+    id: player.id,
+    maxPoints: player.points + ((players.length - 1 - player.matches) * 2),
+    currentPoints: player.points,
+  }));
+
+  const me = maxPoints.find(p => p.id === playerId)!;
+
+  // Count players who can still finish above or equal to me
+  const challengers = maxPoints.filter(
+    p => p.id !== playerId && p.maxPoints >= me.currentPoints
+  );
+
+  return challengers.length < 2;
+}
+
+const PointsTable: React.FC<PointsTableProps> = ({ groups, previousMatches }) => {
   const [expandedPlayerId, setExpandedPlayerId] = useState<string | null>(null);
-  const [activeGroup, setActiveGroup] = useState(groups[0].id);
+  const [activeGroup, setActiveGroup] = useState(groups[0]?.id ?? '');
 
   const togglePlayer = (playerId: string) => {
     if (expandedPlayerId === playerId) {
@@ -19,13 +42,17 @@ const PointsTable: React.FC<PointsTableProps> = ({ groups }) => {
     }
   };
 
-  const getPlayerMatches = (playerId: string): MatchResult[] => {
+  const getPlayerMatches = (playerId: string): Match[] => {
     return previousMatches.filter(
       match => match.player1.id === playerId || match.player2.id === playerId
     );
   };
 
-  const currentGroup = groups.find(g => g.id === activeGroup) || groups[0];
+  const currentGroup = groups.find(g => g.id === activeGroup);
+
+  if (!currentGroup) {
+    return null;
+  }
 
   return (
     <section id="points" className="py-16 px-4 bg-gray-50">
@@ -66,9 +93,15 @@ const PointsTable: React.FC<PointsTableProps> = ({ groups }) => {
               </thead>
               <tbody>
                 {currentGroup.players
-                  .sort((a, b) => b.points - a.points)
+                  .slice()
+                  .sort((a, b) => {
+                    if (b.points !== a.points) return b.points - a.points;
+                    if (b.wins !== a.wins) return b.wins - a.wins;
+                    return a.name.localeCompare(b.name);
+                  })
                   .map((player, index) => {
                     const playerMatches = getPlayerMatches(player.id);
+                    const qualified = hasQualified(player.id, currentGroup);
                     
                     return (
                       <React.Fragment key={player.id}>
@@ -97,7 +130,7 @@ const PointsTable: React.FC<PointsTableProps> = ({ groups }) => {
                               <div>
                                 <div className="font-medium">{player.name}</div>
                                 <div className="text-xs text-gray-500">
-                                  {index < 2 ? 'Qualified' : 'Group Stage'}
+                                  {qualified ? 'Qualified' : 'Group Stage'}
                                 </div>
                               </div>
                               {expandedPlayerId === player.id ? (

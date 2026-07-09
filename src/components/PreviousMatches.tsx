@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { MatchResult } from '../types';
+import { Match } from '../types';
 
 interface PreviousMatchesProps {
-  matches: MatchResult[];
+  matches: Match[];
 }
 
 const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
   const [filter, setFilter] = useState<string | null>(null);
   
   const filteredMatches = filter 
-    ? matches.filter(match => match.group === filter)
+    ? matches.filter(match => match.groupId === filter)
     : matches;
     
   // Get unique groups
-  const groups = Array.from(new Set(matches.map(match => match.group).filter(Boolean))) as string[];
+  const groups = Array.from(new Set(matches.map(match => match.groupId).filter(Boolean))) as string[];
 
   return (
     <section className="py-16 px-4 bg-gray-50">
@@ -35,7 +35,7 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
           
           {groups.map(group => (
             <button
-              key={group}
+              key={group.replace('group-', 'Group ').replace(/\b\w/g, c => c.toUpperCase())}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 filter === group 
                   ? 'bg-blue-600 text-white' 
@@ -51,13 +51,25 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
         {/* Match results */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredMatches.map(match => {
-            const player1Sets = match.player1.score.filter(s => s > match.player2.score[match.player1.score.indexOf(s)]).length;
-            const player2Sets = match.player2.score.filter(s => s > match.player1.score[match.player2.score.indexOf(s)]).length;
+            const player1Sets = match.player1.score.reduce(
+              (count, score, i) => (score > match.player2.score[i] ? count + 1 : count),
+              0
+            );
+            const player2Sets = match.player2.score.reduce(
+              (count, score, i) => (score > match.player1.score[i] ? count + 1 : count),
+              0
+            );
             
             return (
               <div key={match.id} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-lg">
                 <div className="bg-gray-100 p-3 text-sm text-gray-600 flex justify-between items-center">
-                  <span>{match.group || 'Unknown Group'}</span>
+                  <span>
+                    {match.groupId
+                      ? match.groupId
+                          .replace('group-', 'Group ')
+                          .replace(/\b\w/g, c => c.toUpperCase())
+                      : 'Unknown Group'}
+                  </span>
                   <span>{new Date(match.date).toLocaleDateString('en-US', { 
                     month: 'short', 
                     day: 'numeric', 
@@ -69,7 +81,7 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
                   <div className="flex flex-col md:flex-row items-center justify-between mb-6">
                     <div className="flex flex-col items-center text-center mb-4 md:mb-0">
                       <img 
-                        src={match.player1.avatar || 'https://via.placeholder.com/60'} 
+                        src={match.player1.avatar || 'https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/user.svg'} 
                         alt={match.player1.name}
                         className={`w-16 h-16 rounded-full object-cover border-2 ${
                           match.winner === match.player1.id ? 'border-green-500' : 'border-gray-200'
@@ -91,7 +103,7 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
                     
                     <div className="flex flex-col items-center text-center">
                       <img 
-                        src={match.player2.avatar || 'https://via.placeholder.com/60'} 
+                        src={match.player2.avatar || 'https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/user.svg'} 
                         alt={match.player2.name}
                         className={`w-16 h-16 rounded-full object-cover border-2 ${
                           match.winner === match.player2.id ? 'border-green-500' : 'border-gray-200'
@@ -108,7 +120,7 @@ const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
                   
                   <div className="set-scores bg-blue-50 rounded-lg p-3">
                     <h4 className="text-sm font-medium text-gray-700 mb-2">Set Scores</h4>
-                    <div className="grid grid-cols-5 gap-2">
+                    <div className={`grid gap-2`} style={{gridTemplateColumns: `repeat(${match.player1.score.length}, minmax(0, 1fr))`,}}>
                       {match.player1.score.map((score, idx) => (
                         <div key={idx} className="text-center">
                           <div className="grid grid-cols-1 gap-1">

@@ -1,6 +1,19 @@
 import React from 'react';
+import { SeasonData } from '../types';
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  data: SeasonData;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
+  const uniquePlayers = new Set(
+    data.groups.flatMap(group =>
+      group.players.map(player => player.id)
+    )
+  ).size;
+
+  const groupCount = data.groups.length;
+
   return (
     <section id="home" className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background image */}
@@ -19,11 +32,11 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
           <span className="block">Table Tennis</span>
-          <span className="block mt-2 text-blue-400">Championships 2025</span>
+          <span className="block mt-2 text-blue-400">Championships {data.meta.year}</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
-          Experience world-class table tennis as 16 elite players compete for the ultimate title
+          Get ready to spin, smash, and serve your way to victory in our all-out table tennis battle — Ready to rule the room now?
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -43,19 +56,27 @@ const HeroSection: React.FC = () => {
         
         <div className="mt-12 flex justify-center items-center gap-6 text-white">
           <div className="text-center">
-            <div className="text-2xl md:text-4xl font-bold">16</div>
+            <div className="text-2xl md:text-4xl font-bold">{uniquePlayers}</div>
             <div className="text-sm uppercase tracking-wider">Players</div>
           </div>
           <div className="h-8 w-px bg-gray-400"></div>
           <div className="text-center">
-            <div className="text-2xl md:text-4xl font-bold">4</div>
+            <div className="text-2xl md:text-4xl font-bold">{groupCount}</div>
             <div className="text-sm uppercase tracking-wider">Groups</div>
           </div>
           <div className="h-8 w-px bg-gray-400"></div>
           <div className="text-center">
-            <div className="text-2xl md:text-4xl font-bold">7</div>
+            <div className="text-2xl md:text-4xl font-bold">{data.meta.finalsSets}</div>
             <div className="text-sm uppercase tracking-wider">Finals Sets</div>
           </div>
+        </div>
+        
+        <div className="mt-5 flex justify-center items-center gap-6 text-white">
+          <div className="h-[2px] w-20 bg-gray-400"></div>
+          <div className="text-center">
+            <div className="text-sm uppercase tracking-wider">6PM Onwards</div>
+          </div>
+          <div className="h-[2px] w-20 bg-gray-400"></div>
         </div>
       </div>
       

@@ -17,24 +17,30 @@ export interface Group {
 
 export interface Match {
   id: string;
+  date: string;
+  round?: 'quarterfinal' | 'semifinal' | 'final' | 'third_place';
+
+  stage: 'group' | 'knockout';
+  status: 'scheduled' | 'completed';
+  groupId?: string;
+  bracketId?: string;
+
   player1: {
     id: string;
     name: string;
     avatar?: string;
-    score?: number[];
+    score: number[];
   };
+
   player2: {
     id: string;
     name: string;
     avatar?: string;
-    score?: number[];
+    score: number[];
   };
-  date: string;
-  time?: string;
-  group?: string;
-  round?: string;
-  winner?: string;
-  isCompleted: boolean;
+
+  winner: string;
+  isWalkover: boolean;
 }
 
 export interface MatchResult {
@@ -59,35 +65,66 @@ export interface MatchResult {
 
 export interface Highlight {
   id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  videoUrl?: string;
-  date: string;
+  type: 'image' | 'video';
+  url: string;
 }
 
-export interface KnockoutMatch {
+// export interface KnockoutMatch {
+//   id: string;
+//   round: 'quarterfinal' | 'semifinal' | 'final' | 'third_place';
+//   position: number;
+//   player1: {
+//     id: string;
+//     name: string;
+//     score: number[],
+//     avatar?: string;
+//   } | null;
+//   player2: {
+//     id: string;
+//     name: string;
+//     score: number[],
+//     avatar?: string;
+//   } | null;
+//   winner?: string;
+//   date?: string;
+//   time?: string;
+// }
+
+// export interface KnockoutRound {
+//   name: string;
+//   matches: KnockoutMatch[];
+// }
+
+// --- Multi-season support ---
+
+// Master roster entry: canonical identity for a player, reused across seasons.
+export interface PlayerProfile {
   id: string;
-  round: 'quarterfinal' | 'semifinal' | 'final' | 'third_place';
-  position: number;
-  player1: {
-    id: string;
-    name: string;
-    score: number[],
-    avatar?: string;
-  } | null;
-  player2: {
-    id: string;
-    name: string;
-    score: number[],
-    avatar?: string;
-  } | null;
-  winner?: string;
-  date?: string;
-  time?: string;
+  name: string;
+  avatar?: string;
 }
 
-export interface KnockoutRound {
+export interface SeasonMeta {
+  id: string;
   name: string;
-  matches: KnockoutMatch[];
+  year: number;
+  order: number;
+  groupStageSets: number; 
+  knockoutStageSets: number;
+  finalsSets: number;
+  playersPerGroup: number;
+  qualifiersPerGroup: number;
+}
+
+// Everything a season's pages need, fetched as one document.
+export interface SeasonData {
+  meta: SeasonMeta;
+  groups: Group[];
+  matches: Match[];
+  highlights: Highlight[];
+}
+
+export interface AppConfig {
+  latestSeasonId: string;
+  seasons: SeasonMeta[];
 }
