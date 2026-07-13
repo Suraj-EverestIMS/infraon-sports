@@ -57,3 +57,40 @@ a, button {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
+.login-wrapper {
+  background-image: url(https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.login-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+.login-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+.login-wrapper > div {
+  background-color: #ffffff17;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(4px);
+  border: 1px solid;
+  border-color: #ffffff66 #ffffff1f #ffffff33 #ffffff59;
+}

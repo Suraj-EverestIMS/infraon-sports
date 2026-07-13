@@ -21,7 +21,7 @@ export interface Match {
   round?: 'quarterfinal' | 'semifinal' | 'final' | 'third_place';
 
   stage: 'group' | 'knockout';
-  status: 'scheduled' | 'completed';
+  status: "scheduled" | "completed" | "walkover";
   groupId?: string;
   bracketId?: string;
 

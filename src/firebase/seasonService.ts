@@ -1,11 +1,7 @@
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from './config';
 import type { AppConfig, SeasonData } from '../types';
 
-/**
- * Reads config/app, which points at the latest season and lists all seasons
- * (for the season-picker dropdown in the header).
- */
 export async function getAppConfig(): Promise<AppConfig> {
   const snap = await getDoc(doc(db, 'config', 'app'));
   if (!snap.exists()) {
@@ -16,16 +12,30 @@ export async function getAppConfig(): Promise<AppConfig> {
   return snap.data() as AppConfig;
 }
 
-/**
- * Reads a single season document: seasons/{seasonId}.
- * Each season document embeds its groups, matches, and highlights directly,
- * so this is a single read per season.
- */
 export async function getSeasonData(seasonId: string): Promise<SeasonData> {
   const snap = await getDoc(doc(db, 'tt-seasons', seasonId));
   if (!snap.exists()) {
     throw new Error(`Season "${seasonId}" not found in Firestore.`);
   }
+  
+  const seasonData = snap.data() as SeasonData;
+
+  console.log('Season ID:', seasonId);
+  console.log('Season Data:', seasonData);
+  console.log('Season Data (JSON):', JSON.stringify(seasonData, null, 2));
+
 
   return snap.data() as SeasonData;
+}
+
+export async function updateSeasonData(
+  seasonId: string,
+  data: SeasonData
+): Promise<void> {
+  await updateDoc(doc(db, "tt-seasons", seasonId), {
+    groups: data.groups,
+    matches: data.matches,
+    highlights: data.highlights,
+    meta: data.meta,
+  });
 }
