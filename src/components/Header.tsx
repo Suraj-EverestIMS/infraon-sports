@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ seasons, activeSeasonId, onSeasonChange
             ))}
           </select>
 
-          <a href="https://suraj-everestims.github.io/infraon-sports/admin/login" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1">
+          <a href="/#/admin/login" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1">
             <span>
               Login
             </span>

@@ -15,7 +15,7 @@ export default function Login() {
 
   return (
     <div className="login-wrapper">
-      <div className="min-h-screen flex items-center flex-col gap-3 justify-center">
+      <div className="flex items-center flex-col gap-3 justify-center">
         <button
           onClick={handleLogin}
           className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"

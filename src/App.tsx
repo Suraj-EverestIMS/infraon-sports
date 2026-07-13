@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./public/Home";
 
@@ -9,7 +9,7 @@ import AdminLayout from "./admin/layouts/AdminLayout";
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -20,7 +20,7 @@ function App() {
           <Route path="seasons/:seasonId" element={<Matches />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
