@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { getAppConfig } from "../../firebase/seasonService";
 import type { AppConfig } from "../../types";
+import { CalendarClock } from "lucide-react";
 
 export default function Season() {
   const [config, setConfig] = useState<AppConfig | null>(null);
@@ -23,7 +24,17 @@ export default function Season() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold mb-6">Select Season</h1>
+      <div className="flex justify-between mb-6 items-center flex-col md:flex-row gap-2">
+        <h1 className="text-3xl font-bold">Select Season</h1>
+
+        <a
+          href="https://suraj-everestims.github.io/infraon-sports/"
+          className="w-fit flex items-center gap-2 rounded-lg border px-4 py-2 transition bg-white hover:bg-gray-100"
+        >
+          Check Tournament
+          <CalendarClock size={18} />
+        </a>
+      </div>
 
       <div className="grid gap-4">
         {config.seasons.map((season) => (

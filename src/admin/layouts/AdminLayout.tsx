@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { LogOut, CalendarClock, ArrowLeft } from "lucide-react";
+import { LogOut, ArrowLeft } from "lucide-react";
 import { logout } from "../../firebase/auth";
 
 export default function AdminLayout() {
@@ -12,7 +12,7 @@ export default function AdminLayout() {
 
   const location = useLocation();
 
-  const showBackButton = location.pathname !== "/admin/seasons";
+  const showBackButton = location.pathname !== "/admin";
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -33,24 +33,13 @@ export default function AdminLayout() {
             width={180}
           />
         </div>
-
-        <div className="flex items-center gap-3">
-          <a
-            href="https://suraj-everestims.github.io/infraon-sports/"
-            className="flex items-center gap-2 rounded-lg border px-4 py-2 transition hover:bg-gray-100"
-          >
-            Check Tournament
-            <CalendarClock size={18} />
-          </a>
-
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 rounded-lg border px-4 py-2 transition hover:bg-gray-100"
-          >
-            <LogOut size={18} />
-            Logout
-          </button>
-        </div>
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-2 rounded-lg border px-4 py-2 transition hover:bg-gray-100"
+        >
+          <LogOut size={18} />
+          <span className="hidden md:flex">Logout</span>
+        </button>
       </header>
 
       <main className="p-6">

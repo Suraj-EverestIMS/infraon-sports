@@ -5,6 +5,7 @@ import { getSeasonData } from "../../firebase/seasonService";
 import type { SeasonData, Match } from "../../types";
 import MatchEditorModal from "../components/MatchEditorModal";
 import { getPlayers, PlayerProfile } from "../../firebase/playerService";
+import { CalendarClock } from "lucide-react";
 
 export default function Matches() {
   const { seasonId } = useParams();
@@ -67,7 +68,17 @@ export default function Matches() {
 
   return (
     <div>
-      <h1 className="mb-6 text-3xl font-bold">{season.meta.name}</h1>
+      <div className="flex justify-between items-center mb-6 flex-col md:flex-row gap-2">
+        <h1 className="text-3xl font-bold">{season.meta.name}</h1>
+
+        <a
+          href="https://suraj-everestims.github.io/infraon-sports/"
+          className="w-fit flex items-center gap-2 rounded-lg border px-4 py-2 transition bg-white hover:bg-gray-100"
+        >
+          Check Tournament
+          <CalendarClock size={18} />
+        </a>
+      </div>
 
       <div className="overflow-x-auto rounded-lg border bg-white">
         <table className="min-w-full">
@@ -91,9 +102,7 @@ export default function Matches() {
               >
                 <td className="p-3">{match.date}</td>
 
-                <td className="p-3">
-                  {formatStage(match)}
-                </td>
+                <td className="p-3">{formatStage(match)}</td>
 
                 <td className="p-3">{match.player1.name}</td>
 

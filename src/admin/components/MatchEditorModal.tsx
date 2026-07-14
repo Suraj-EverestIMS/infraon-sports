@@ -129,6 +129,30 @@ export default function MatchEditorModal({
     };
   }
 
+  function formatStage(match: Match) {
+    if (match.stage === "group") {
+      const letter = match.groupId?.replace("group-", "").toUpperCase();
+      return `Group ${letter}`;
+    }
+
+    switch (match.round) {
+      case "quarterfinal":
+        return "Quarter Final";
+
+      case "semifinal":
+        return "Semi Final";
+
+      case "final":
+        return "Final";
+
+      case "third_place":
+        return "Third Place";
+
+      default:
+        return match.round;
+    }
+  }
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
@@ -141,11 +165,9 @@ export default function MatchEditorModal({
         {/* Header */}
         <div className="flex items-center justify-between border-b p-6">
           <div>
-            <h2 className="text-2xl font-bold">Edit Match</h2>
+            <h2 className="text-xl md:text-2xl font-bold">Edit Match</h2>
             <p className="text-sm text-gray-500">
-              {editedMatch.stage === "group"
-                ? editedMatch.groupId
-                : editedMatch.round}
+              {formatStage(editedMatch)}
             </p>
           </div>
 
@@ -158,10 +180,10 @@ export default function MatchEditorModal({
         </div>
 
         <div className="space-y-8 p-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap md:flex-nowrap items-center justify-between">
             {/* Match Info */}
-            <div className="">
-              <h3 className="text-3xl font-bold">
+            <div className="pb-3 md:pb-0">
+              <h3 className="text-xl md:text-3xl font-bold">
                 {editedMatch.player1.name}{" "}
                 <span className="my-2 text-lg font-semibold text-gray-400">
                   VS
@@ -174,7 +196,7 @@ export default function MatchEditorModal({
 
             {/* Match Options */}
             <div className="grid gap-6">
-              <div className="flex items-center gap-2">
+              <div className="flex-wrap md:flex-nowrap items-center gap-2">
                 <label className="block font-medium">Status</label>
 
                 <select
@@ -197,7 +219,7 @@ export default function MatchEditorModal({
                       },
                     });
                   }}
-                  className="w-[15rem] rounded-lg border p-3"
+                  className="w-[15rem] text-sm md:text-l rounded-lg border p-3"
                 >
                   <option value="scheduled">Scheduled</option>
                   <option value="completed">Completed</option>
