@@ -2,16 +2,19 @@ import { useEffect, useState } from "react";
 import type { Match, SeasonData } from "../../types";
 import { updateSeasonData } from "../../firebase/seasonService";
 import { recalculateSeason } from "../services/standings.service";
+import { PlayerProfile } from "../../firebase/playerService";
 
 interface MatchEditorModalProps {
   season: SeasonData;
   match: Match;
+  players: Record<string, PlayerProfile>;
   onClose: () => void;
 }
 
 export default function MatchEditorModal({
   season,
   match,
+  players,
   onClose,
 }: MatchEditorModalProps) {
   const [editedMatch, setEditedMatch] = useState(match);
@@ -50,12 +53,41 @@ export default function MatchEditorModal({
 
   async function handleSave() {
     try {
+      const syncedMatch = {
+        ...editedMatch,
+
+        player1: {
+          ...editedMatch.player1,
+          name:
+            players[editedMatch.player1.id]?.name ?? editedMatch.player1.name,
+          avatar: players[editedMatch.player1.id]?.avatar,
+        },
+
+        player2: {
+          ...editedMatch.player2,
+          name:
+            players[editedMatch.player2.id]?.name ?? editedMatch.player2.name,
+          avatar: players[editedMatch.player2.id]?.avatar,
+        },
+      };
+
       const updatedSeason: SeasonData = {
         ...season,
         matches: season.matches.map((m) =>
-          m.id === editedMatch.id ? editedMatch : m,
+          m.id === syncedMatch.id ? syncedMatch : m,
         ),
       };
+
+      updatedSeason.groups.forEach((group) => {
+        group.players.forEach((player) => {
+          const profile = players[player.id];
+
+          if (!profile) return;
+
+          player.name = profile.name;
+          player.avatar = profile.avatar;
+        });
+      });
 
       const recalculatedSeason = recalculateSeason(updatedSeason);
 

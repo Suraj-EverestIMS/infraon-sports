@@ -1,11 +1,13 @@
 import React from "react";
 import { Match, SeasonData } from "../types";
+import { PlayerProfile } from "../firebase/playerService";
 
 interface KnockoutBracketProps {
   data: SeasonData;
+  players: Record<string, PlayerProfile>;
 }
 
-const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
+const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data, players }) => {
   const { matches, groups, meta } = data;
 
   const knockoutMatches = matches.filter((match) => match.stage === "knockout");
@@ -41,57 +43,57 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
         : null;
 
   const championStats = winner
-  ? matches
-      .filter(
-        (match) =>
-          match.status === "completed" &&
-          (match.player1.id === winner.id || match.player2.id === winner.id),
-      )
-      .reduce(
-        (stats, match) => {
-          const isPlayer1 = match.player1.id === winner.id;
+    ? matches
+        .filter(
+          (match) =>
+            match.status === "completed" &&
+            (match.player1.id === winner.id || match.player2.id === winner.id),
+        )
+        .reduce(
+          (stats, match) => {
+            const isPlayer1 = match.player1.id === winner.id;
 
-          const playerScores = isPlayer1
-            ? match.player1.score
-            : match.player2.score;
+            const playerScores = isPlayer1
+              ? match.player1.score
+              : match.player2.score;
 
-          const opponentScores = isPlayer1
-            ? match.player2.score
-            : match.player1.score;
+            const opponentScores = isPlayer1
+              ? match.player2.score
+              : match.player1.score;
 
-          let setsWon = 0;
-          let setsLost = 0;
+            let setsWon = 0;
+            let setsLost = 0;
 
-          playerScores.forEach((score, i) => {
-            if (score > opponentScores[i]) {
-              setsWon++;
+            playerScores.forEach((score, i) => {
+              if (score > opponentScores[i]) {
+                setsWon++;
+              } else {
+                setsLost++;
+              }
+            });
+
+            stats.matches++;
+
+            if (match.winner === winner.id) {
+              stats.wins++;
             } else {
-              setsLost++;
+              stats.losses++;
             }
-          });
 
-          stats.matches++;
+            stats.setsWon += setsWon;
+            stats.setsLost += setsLost;
 
-          if (match.winner === winner.id) {
-            stats.wins++;
-          } else {
-            stats.losses++;
-          }
-
-          stats.setsWon += setsWon;
-          stats.setsLost += setsLost;
-
-          return stats;
-        },
-        {
-          matches: 0,
-          wins: 0,
-          losses: 0,
-          setsWon: 0,
-          setsLost: 0,
-        },
-      )
-  : null;
+            return stats;
+          },
+          {
+            matches: 0,
+            wins: 0,
+            losses: 0,
+            setsWon: 0,
+            setsLost: 0,
+          },
+        )
+    : null;
 
   const groupCount = groups.length;
 
@@ -157,15 +159,14 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
           }`}
         >
           <div className="flex items-center gap-2">
-            {match.player1?.avatar ? (
-              <img
-                src={match.player1.avatar}
-                alt={match.player1.name}
-                className="w-6 h-6 rounded-full object-cover"
-              />
-            ) : (
-              <div className="w-6 h-6 rounded-full bg-gray-200"></div>
-            )}
+            <img
+              src={
+                players[match.player1.id]?.avatar ??
+                "https://placehold.net/avatar-5.svg"
+              }
+              alt={match.player1.name}
+              className="w-6 h-6 rounded-full object-cover"
+            />
 
             <span
               className={`flex justify-between items-center w-full ${
@@ -192,15 +193,14 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
           }`}
         >
           <div className="flex items-center gap-2">
-            {match.player2?.avatar ? (
-              <img
-                src={match.player2.avatar}
-                alt={match.player2.name}
-                className="w-6 h-6 rounded-full object-cover"
-              />
-            ) : (
-              <div className="w-6 h-6 rounded-full bg-gray-200"></div>
-            )}
+            <img
+              src={
+                players[match.player2.id]?.avatar ??
+                "https://placehold.net/avatar-5.svg"
+              }
+              alt={match.player2.name}
+              className="w-6 h-6 rounded-full object-cover"
+            />
 
             <span
               className={`flex justify-between items-center w-full ${
@@ -234,7 +234,7 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
           backgroundPosition: "center",
           opacity: 1,
           backgroundAttachment: "fixed",
-          filter: "brightness(0.5)"
+          filter: "brightness(0.5)",
         }}
       />
 
@@ -245,25 +245,24 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
 
         <div className="grid grid-cols-5 gap-8 items-center">
           <div className="flex flex-col justify-center h-full">
-            
             <div>{renderMatch(leftQuarters[0])}</div>
 
             <div className="mt-24">{renderMatch(leftQuarters[1])}</div>
           </div>
 
           <div className="flex flex-col justify-center h-full">
-            
             {leftSemi && renderMatch(leftSemi)}
           </div>
 
           <div className="flex flex-col justify-center gap-8">
-            
             {winner ? (
               <div className="bg-white rounded-xl shadow-xl p-6 border-2 border-yellow-400">
                 <div className="text-center">
-                  
                   <img
-                    src={winner.avatar}
+                    src={
+                      players[winner.id]?.avatar ??
+                      "https://placehold.net/avatar-5.svg"
+                    }
                     className="w-[4rem] h-[4rem] rounded-full mx-auto mt-0 border-4 border-yellow-400"
                   />
 
@@ -275,9 +274,24 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 mt-6">
-                    <p className="text-xs text-gray-500">Matches: <span className="font-bold">{championStats?.matches ?? 0}</span></p>
-                    <p className="text-xs text-gray-500">Wins: <span className="font-bold">{championStats?.wins ?? 0}</span></p>
-                    <p className="text-xs text-gray-500">Losses: <span className="font-bold">{championStats?.losses ?? 0}</span></p>
+                  <p className="text-xs text-gray-500">
+                    Matches:{" "}
+                    <span className="font-bold">
+                      {championStats?.matches ?? 0}
+                    </span>
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Wins:{" "}
+                    <span className="font-bold">
+                      {championStats?.wins ?? 0}
+                    </span>
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Losses:{" "}
+                    <span className="font-bold">
+                      {championStats?.losses ?? 0}
+                    </span>
+                  </p>
                 </div>
               </div>
             ) : (
@@ -293,12 +307,10 @@ const KnockoutBracket: React.FC<KnockoutBracketProps> = ({ data }) => {
           </div>
 
           <div className="flex flex-col justify-center h-full">
-            
             {rightSemi && renderMatch(rightSemi)}
           </div>
 
           <div className="flex flex-col justify-center h-full">
-            
             <div>{renderMatch(rightQuarters[0])}</div>
 
             <div className="mt-24">{renderMatch(rightQuarters[1])}</div>

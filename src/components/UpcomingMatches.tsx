@@ -1,12 +1,14 @@
 import React from "react";
 import { Clock, MapPin } from "lucide-react";
 import { Match } from "../types";
+import { PlayerProfile } from "../firebase/playerService";
 
 interface UpcomingMatchesProps {
   matches: Match[];
+  players: Record<string, PlayerProfile>;
 }
 
-const UpcomingMatches: React.FC<UpcomingMatchesProps> = ({ matches }) => {
+const UpcomingMatches: React.FC<UpcomingMatchesProps> = ({ matches, players }) => {
   const groupedMatches = matches.reduce<Record<string, Match[]>>(
     (acc, match) => {
       if (!acc[match.date]) {
@@ -109,8 +111,7 @@ const UpcomingMatches: React.FC<UpcomingMatchesProps> = ({ matches }) => {
                         <div className="flex flex-1 flex-col items-center">
                           <img
                             src={
-                              match.player1.avatar ||
-                              "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/user.svg"
+                              players[match.player1.id]?.avatar ?? "https://placehold.net/avatar-5.svg"
                             }
                             alt={match.player1.name}
                             className="w-16 h-16 rounded-full object-cover border-2 border-gray-200"
@@ -129,8 +130,7 @@ const UpcomingMatches: React.FC<UpcomingMatchesProps> = ({ matches }) => {
                         <div className="flex flex-1 flex-col items-center">
                           <img
                             src={
-                              match.player2.avatar ||
-                              "https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/user.svg"
+                              players[match.player2.id]?.avatar ?? "https://placehold.net/avatar-5.svg"
                             }
                             alt={match.player2.name}
                             className="w-16 h-16 rounded-full object-cover border-2 border-gray-200"

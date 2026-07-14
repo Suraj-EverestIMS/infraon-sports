@@ -13,7 +13,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useSeasonData } from '../hooks/useSeasonData';
 
 function Home() {
-  const { seasons, activeSeasonId, setActiveSeasonId, data, loading, error } = useSeasonData();
+  const { players, seasons, activeSeasonId, setActiveSeasonId, data, loading, error } = useSeasonData();
 
   if (error) {
     return (
@@ -52,10 +52,10 @@ function Home() {
         onSeasonChange={setActiveSeasonId}
       />
       <HeroSection data={data} />
-      <UpcomingMatches matches={upcomingMatches} />
-      <PointsTable groups={data.groups} previousMatches={previousMatches} />
-      <KnockoutBracket data={data} />
-      <PreviousMatches matches={previousMatches} />
+      <UpcomingMatches matches={upcomingMatches} players={players} />
+      <PointsTable groups={data.groups} previousMatches={previousMatches} players={players} />
+      <KnockoutBracket data={data} players={players} />
+      <PreviousMatches matches={previousMatches} players={players} />
       <Highlights highlights={data.highlights} />
       <Footer />
     </div>

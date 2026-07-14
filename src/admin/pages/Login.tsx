@@ -1,8 +1,21 @@
 import { useNavigate } from "react-router-dom";
-import { login } from "../services/auth.service";
+import { login, handleRedirectLogin } from "../services/auth.service";
+import { useEffect } from "react";
 
 export default function Login() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    async function init() {
+      const user = await handleRedirectLogin();
+
+      if (user) {
+        navigate("/admin/seasons");
+      }
+    }
+
+    init();
+  }, [navigate]);
 
   async function handleLogin() {
     try {

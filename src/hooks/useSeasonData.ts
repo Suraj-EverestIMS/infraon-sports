@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 import { getAppConfig, getSeasonData } from '../firebase/seasonService';
 import type { SeasonData, SeasonMeta } from '../types';
+import { getPlayers, PlayerProfile } from '../firebase/playerService';
 
 interface UseSeasonDataResult {
+  players: Record<string, PlayerProfile>;
   seasons: SeasonMeta[];
   activeSeasonId: string;
   setActiveSeasonId: (id: string) => void;
@@ -12,6 +14,7 @@ interface UseSeasonDataResult {
 }
 
 export function useSeasonData(): UseSeasonDataResult {
+  const [players, setPlayers] = useState<Record<string, PlayerProfile>>({});
   const [seasons, setSeasons] = useState<SeasonMeta[]>([]);
   const [activeSeasonId, setActiveSeasonIdState] = useState<string>('');
   const [data, setData] = useState<SeasonData | null>(null);
@@ -27,6 +30,9 @@ export function useSeasonData(): UseSeasonDataResult {
         const sorted = [...config.seasons].sort((a, b) => b.order - a.order);
         setSeasons(sorted);
         setActiveSeasonIdState(config.latestSeasonId);
+
+        const playerData = await getPlayers();
+        setPlayers(playerData);
       } catch (err) {
         if (!cancelled) {
           setError(err instanceof Error ? err.message : 'Failed to load app config.');
@@ -65,5 +71,5 @@ export function useSeasonData(): UseSeasonDataResult {
     setActiveSeasonIdState(id);
   }, []);
 
-  return { seasons, activeSeasonId, setActiveSeasonId, data, loading, error };
+  return { players, seasons, activeSeasonId, setActiveSeasonId, data, loading, error };
 }

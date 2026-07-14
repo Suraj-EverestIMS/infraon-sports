@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getSeasonData } from "../../firebase/seasonService";
 import type { SeasonData, Match } from "../../types";
 import MatchEditorModal from "../components/MatchEditorModal";
+import { getPlayers, PlayerProfile } from "../../firebase/playerService";
 
 export default function Matches() {
   const { seasonId } = useParams();
@@ -11,6 +12,7 @@ export default function Matches() {
   const [season, setSeason] = useState<SeasonData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
+  const [players, setPlayers] = useState<Record<string, PlayerProfile>>({});
 
   useEffect(() => {
     if (!seasonId) return;
@@ -21,7 +23,9 @@ export default function Matches() {
   async function loadSeason() {
     try {
       const data = await getSeasonData(seasonId!);
+      const playerData = await getPlayers();
       setSeason(data);
+      setPlayers(playerData);
     } catch (error) {
       console.error(error);
     } finally {
@@ -122,6 +126,7 @@ export default function Matches() {
       {selectedMatch && (
         <MatchEditorModal
           season={season}
+          players={players}
           match={selectedMatch}
           onClose={() => setSelectedMatch(null)}
         />

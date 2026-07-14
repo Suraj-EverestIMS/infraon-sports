@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Match } from '../types';
+import { PlayerProfile } from '../firebase/playerService';
 
 interface PreviousMatchesProps {
   matches: Match[];
+  players: Record<string, PlayerProfile>;
 }
 
-const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches }) => {
+const PreviousMatches: React.FC<PreviousMatchesProps> = ({ matches, players }) => {
   const [filter, setFilter] = useState<string>("all");
   
   const filteredMatches = matches.filter(match => {
@@ -135,7 +137,7 @@ console.log("Rounds:", rounds);
                   <div className="flex flex-col md:flex-row items-center justify-between mb-6">
                     <div className="flex flex-col items-center text-center mb-4 md:mb-0">
                       <img 
-                        src={match.player1.avatar || 'https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/user.svg'} 
+                        src={players[match.player1.id]?.avatar ?? "https://placehold.net/avatar-5.svg"} 
                         alt={match.player1.name}
                         className={`w-16 h-16 rounded-full object-cover border-2 ${
                           match.winner === match.player1.id ? 'border-green-500' : 'border-gray-200'
@@ -157,7 +159,7 @@ console.log("Rounds:", rounds);
                     
                     <div className="flex flex-col items-center text-center">
                       <img 
-                        src={match.player2.avatar || 'https://infraon-assets.s3-accelerate.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/user.svg'} 
+                        src={players[match.player2.id]?.avatar ?? "https://placehold.net/avatar-5.svg"} 
                         alt={match.player2.name}
                         className={`w-16 h-16 rounded-full object-cover border-2 ${
                           match.winner === match.player2.id ? 'border-green-500' : 'border-gray-200'
