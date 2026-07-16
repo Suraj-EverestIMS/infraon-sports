@@ -25,7 +25,7 @@ export default function Dashboard() {
       <div className="grid gap-6 md:grid-cols-3">
         <button
           onClick={() => navigate("/admin/seasons")}
-          className="rounded-xl border bg-white p-8 shadow transition hover:-translate-y-1 hover:shadow-lg"
+          className="dashboard-button tt rounded-xl border bg-white p-8 shadow transition hover:-translate-y-1 hover:shadow-lg"
         >
           <div className="text-5xl">🏓</div>
 
@@ -38,7 +38,7 @@ export default function Dashboard() {
 
         <button
           onClick={() => comingSoon("Badminton")}
-          className="rounded-xl border bg-white p-8 shadow transition hover:-translate-y-1 hover:shadow-lg"
+          className="dashboard-button badminton rounded-xl border bg-white p-8 shadow transition hover:-translate-y-1 hover:shadow-lg"
         >
           <div className="text-5xl">🏸</div>
 
@@ -49,7 +49,7 @@ export default function Dashboard() {
 
         <button
           onClick={() => comingSoon("Carrom")}
-          className="rounded-xl border bg-white p-8 shadow transition hover:-translate-y-1 hover:shadow-lg"
+          className="dashboard-button carrom rounded-xl border bg-white p-8 shadow transition hover:-translate-y-1 hover:shadow-lg"
         >
           <div className="text-5xl">🎯</div>
 

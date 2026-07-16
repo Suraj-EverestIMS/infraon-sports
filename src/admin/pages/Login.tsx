@@ -38,6 +38,10 @@ export default function Login() {
 
   return (
     <div className="login-wrapper">
+      <div className="bg bg-1"></div>
+      <div className="bg bg-2"></div>
+      <div className="bg bg-3"></div>
+      
       <div className="flex items-center flex-col gap-3 justify-center">
         {error && (
           <div className="w-full rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-600">

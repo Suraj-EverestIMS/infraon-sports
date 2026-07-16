@@ -11,6 +11,7 @@
 }
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #000;
 }
 
 /* Animation for hero section */
@@ -58,27 +59,86 @@ a, button {
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 .login-wrapper {
-  background-image: url(https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg.jpg);
+  /* background-image: url(https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh; */
+
+  position: relative;
   min-height: 100vh;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  animation: slideshow 12s infinite;
+  will-change: opacity;
+  height: 100vh;
+}
+
+.bg-1 {
+  background-image: url("https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg.jpg");
+  animation-delay: 0s;
+}
+
+.bg-2 {
+  background-image: url("https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg-2.jpg");
+  animation-delay: 4s;
+}
+
+.bg-3 {
+  background-image: url("https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg-3.jpg");
+  animation-delay: 8s;
+}
+
+@keyframes slideshow {
+  0% {
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  28% {
+    opacity: 1;
+  }
+
+  36% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .login-wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
+  z-index: 5;
   pointer-events: none;
 }
 
-.login-wrapper > * {
+.login-wrapper > *:not(.bg) {
+  position: relative;
+  z-index: 10;
+}
+
+.login-wrapper > *:not(.bg) {
   position: relative;
   z-index: 1;
 }
 
-.login-wrapper > div {
+.login-wrapper > div:not(.bg) {
   background-color: #ffffff17;
   width: fit-content;
   height: fit-content;
@@ -90,7 +150,42 @@ a, button {
   margin: auto;
   padding: 1.5rem;
   border-radius: 1rem;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
   border: 1px solid;
   border-color: #ffffff66 #ffffff1f #ffffff33 #ffffff59;
+  z-index: 6;
+}
+
+
+.dashboard-button {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.dashboard-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 58%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.dashboard-button * {
+  position: relative;
+  z-index: 6;
+  color: #fff;
+}
+
+.dashboard-button.tt {
+  background-image: url(https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg.jpg);
+}
+.dashboard-button.badminton {
+  background-image: url(https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg-2.jpg);
+}
+.dashboard-button.carrom {
+  background-image: url(https://infraon-assets.s3.us-west-1.amazonaws.com/docs/sports-tournaments-highlights/table-tennis/login-bg-3.jpg);
 }
