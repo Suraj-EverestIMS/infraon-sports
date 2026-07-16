@@ -18,9 +18,9 @@ export async function getSeasonData(seasonId: string): Promise<SeasonData> {
     throw new Error(`Season "${seasonId}" not found in Firestore.`);
   }
   
-  // const seasonData = snap.data() as SeasonData;
+  const seasonData = snap.data() as SeasonData;
 
-  // console.log('Season Data:', seasonData);
+  console.log('Season Data:', seasonData);
 
   return snap.data() as SeasonData;
 }
